@@ -9,14 +9,14 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Container } from "@/components/Container";
+import { H2 } from "@/components/H2";
 import { Input } from "@/components/ui/input";
-import H2 from "@/components/H2";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -43,7 +43,7 @@ export default function Login() {
     // comunicar con bff
   }
   return (
-    <>
+    <Container>
       <H2>Inicio de sesión</H2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -82,7 +82,7 @@ export default function Login() {
           <div>
             <Link href={"/forgot-password"}>
               <small style={{ textDecoration: "underline" }}>
-                Olvidé mi constraseña
+                Olvidé mi contraseña
               </small>
             </Link>
           </div>
@@ -91,6 +91,6 @@ export default function Login() {
           </Button>
         </form>
       </Form>
-    </>
+    </Container>
   );
 }

@@ -11,10 +11,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/Container";
+import { H2 } from "@/components/H2";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
-import H2 from "@/components/H2";
 
 const formSchema = z.object({
   mail: z.string(),
@@ -36,7 +37,7 @@ export default function RecoverPassword() {
   }
 
   return (
-    <>
+    <Container>
       <H2 className="space-y-10">Actualizar contraseña</H2>
       <span>
         Selecciona el método de seguridad para crear o recuperar tu nueva clave
@@ -79,6 +80,6 @@ export default function RecoverPassword() {
           <Button type="submit">Continuar</Button>
         </form>
       </Form>
-    </>
+    </Container>
   );
 }

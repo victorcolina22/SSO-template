@@ -11,10 +11,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { H2 } from "@/components/H2";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Container } from "@/components/Container";
 
 const formSchema = z.object({
   method: z.enum(["email", "phone", "none"], {
@@ -38,7 +39,7 @@ export default function MethodPassword() {
   }
 
   return (
-    <>
+    <Container>
       <H2>Actualizar contraseña</H2>
       <span>
         Selecciona el método de seguridad para crear o recuperar tu nueva clave
@@ -66,7 +67,7 @@ export default function MethodPassword() {
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <RadioGroupItem value="mentions" />
+                        <RadioGroupItem value="phone" />
                       </FormControl>
                       <FormLabel className="font-normal">
                         Enviar mi teléfono registrado.
@@ -81,6 +82,6 @@ export default function MethodPassword() {
           <Button type="submit">Continuar</Button>
         </form>
       </Form>
-    </>
+    </Container>
   );
 }

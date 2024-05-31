@@ -11,10 +11,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/Container";
+import { H2 } from "@/components/H2";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
-import H2 from "@/components/H2";
 
 const formSchema = z.object({
   mail: z.string().min(2, {
@@ -38,7 +39,7 @@ export default function ForgotPassword() {
   }
 
   return (
-    <section>
+    <Container>
       <H2>Olvidé contraseña</H2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -58,6 +59,6 @@ export default function ForgotPassword() {
           <Button type="submit">Continuar</Button>
         </form>
       </Form>
-    </section>
+    </Container>
   );
 }

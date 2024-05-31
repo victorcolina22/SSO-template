@@ -13,8 +13,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Container } from "@/components/Container";
+import { H2 } from "@/components/H2";
 import { Input } from "@/components/ui/input";
-import H2 from "@/components/H2";
 
 const formSchema = z.object({
   password: z.string().min(2, {
@@ -40,7 +41,7 @@ export default function ChangePassword() {
     console.log(values);
   }
   return (
-    <>
+    <Container>
       <H2>Crear o actualizar contraseña</H2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -87,6 +88,6 @@ export default function ChangePassword() {
           </Button>
         </form>
       </Form>
-    </>
+    </Container>
   );
 }
